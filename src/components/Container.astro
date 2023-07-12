@@ -1,0 +1,32 @@
+---
+
+---
+
+<div class="container">
+    <slot/>
+</div>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .container {
+        margin-inline: auto;
+        padding-inline: 1rem;
+        width: 100%;
+        max-width: map-get($breakpoints, "sm");
+
+        @media screen and (min-width: map-get($breakpoints, "med")) {
+            max-width: map-get($breakpoints, "med");
+        }
+
+        @media screen and (min-width: map-get($breakpoints, "lg")) {
+            max-width: map-get($breakpoints, "lg");
+        }
+
+        @media screen and (min-width: map-get($breakpoints, "xl")) {
+            max-width: map-get($breakpoints, "xl");
+        }
+
+
+    }
+</style>

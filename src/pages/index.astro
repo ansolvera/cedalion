@@ -1,0 +1,239 @@
+---
+import Meta from "../components/Meta.astro";
+import GlobalStyles from "../components/GlobalStyles.astro";
+import Header from "../components/Header.astro";
+import Container from "../components/Container.astro";
+import Button from "../components/Button.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+import Card from "../components/Card.astro";
+import PricingCard from "../components/PricingCard.astro";
+import Faq from "../components/Faq.astro";
+import {Icon} from 'astro-icon';
+import {Content as AboutContent} from "../content/home/about.md";
+import {Content as PricingContent} from "../content/home/pricing.md";
+---
+
+<html lang="en">
+	<head>
+		<Meta siteTitle="Cedalion | Unlimited designs for a low monthly fee" />
+		<GlobalStyles />
+	</head>
+	<body>
+		<Header></Header>
+		<section>
+			<Container>
+				<div class="max-w-870 mx-auto">
+					<h1 class="mb-4">Cedalion is a <s>different</s> <span class="orange">better</span> kind of design agency.</h1>
+					<p class="mb-6">Say goodbye to job postings, invoices, and contractor timesheets. Switch to a design subscription instead.</p>
+					<div class="btn--wrapper mb-6">
+						<Button label="Get started"/>
+						<Button isWhite label="Learn more"/>
+					</div>
+					<div>
+						<small>Sign up in 5 minutes</small>
+						<small class="orange">|</small>
+						<small>Cancel any time</small>
+						<small class="orange">|</small>
+						<small>No contracts or hidden fees</small>
+					</div>
+				</div>
+			</Container>
+		</section>
+		<section class="image--section"></section>
+		<section>
+			<Container>
+				<div class="max-w-770 mb-16">
+					<h2 class="mb-4">The traditional agency model just doesn't make sense anymore</h2>
+					<p>Unleash your business's online presence with unlimited designs, unmatched cost savings, and lightning-fast deliverables.</p>
+				</div>
+				<div class="prose col-2">
+					<AboutContent />
+				</div>
+			</Container>
+		</section>
+		<section class="is-gray">
+			<Container>
+				<div class="grid-cols-2">
+					<h2>Get unlimited designs (and revisions!) for one low monthly fee</h2>
+					<div class="prose">
+						<PricingContent/>
+					</div>
+				</div>
+			</Container>
+		</section>
+		<section>
+			<Container>
+				<div class="max-w-770 mb-16">
+					<Eyebrow content="How Cedalion works"></Eyebrow>
+					<h2 class="mb-4">A simple, streamlined process</h2>
+					<p>No more email chains, Slack notifications, or missed dealines. We've simplified our design process to ensure high-quality work and fast turnaround times.</p>
+				</div>
+				<div class="grid-cols-4">
+					<Card heading="Queue up your projects" content="Add, manage, organize, and track your project requests using your very own Trello board."></Card>
+					<Card heading="We get to work" content="Your design will be completed within two to three business days, on average, Monday through Friday."></Card>
+					<Card heading="Request revisions" content="Design is an iterative process, so request as many revisions as you'd like. We're not happy until you are."></Card>
+					<Card heading="Receive your designs" content="Receive your completed designs, and choose the next project you'd like us to work on."></Card>
+				</div>
+			</Container>
+		</section>
+		<section>
+			<Container>
+				<div class="max-w-770 mb-16">
+					<Eyebrow content="Perks? We've got lots of 'em"></Eyebrow>
+					<h2 class="mb-4">Membership has its benefits</h2>
+					<p>No more email chains, Slack notifications, or missed dealines. We've simplified our design process to ensure high-quality work and fast turnaround times.</p>
+				</div>
+				<div class="grid-cols-6">
+					<Card heading="Unlimited design projects" content="Submit and queue up as many design projects as you like. Unlimited really means unlimited."></Card>
+					<Card heading="Top-notch quality" content="Professional-quality design at your fingertips. Without the six-figure salary expenses."></Card>
+					<Card heading="Quick turnarounds" content="Most projects are completed within 48 to 72 hours, on average."></Card>
+					<Card heading="No meetings" content="Because the last thing you need right now is another recurring meeting on your calendar."></Card>
+					<Card heading="Low commitment" content="Get started today with no contracts, retainer agreements, or minimum commitments."></Card>
+					<Card heading="Premium stock assets" content="Need great stock photos or videos for your project? We source and design with them for you."></Card>
+				</div>
+			</Container>
+		</section>
+		<section>
+			<Container>
+				<div class="max-w-770 mb-16">
+					<h2 class="mb-4">Two billing options. One flat, monthly fee</h2>
+					<p>No more email chains, Slack notifications, or missed dealines. We've simplified our design process to ensure high-quality work and fast turnaround times.</p>
+				</div>
+				<div class="grid-cols-2">
+					<PricingCard href="https://buy.stripe.com/00gbKNc8f251c3C6op" billing="monthly" price="$2,495" description="The perfect plan for those businesses with ongoing design needs and a desire to grow."></PricingCard>
+					<PricingCard href="https://buy.stripe.com/eVaeWZ6NV9xtebKeUY" isBlack billing="quarterly" price="$1,995" description="The perfect plan for startups and teams looking for cost savings as well as a long-term design partner."></PricingCard>
+				</div>
+			</Container>
+		</section>
+		<section>
+			<Container>
+				<div class="max-w-770 mb-16">
+					<Eyebrow content="FAQ"></Eyebrow>
+					<h2 class="mb-4">Frequently asked questions</h2>
+					<p>No more email chains, Slack notifications, or missed dealines. We've simplified our design process to ensure high-quality work and fast turnaround times.</p>
+				</div>
+				<div>
+					<Faq question="Why wouldn't I just hire a full-time designer?" answer="Good"></Faq>
+					<Faq question="Is there a limit to how many requests I can have at one time?" answer="Good"></Faq>
+					<Faq question="Who are the designers?" answer="Good"></Faq>
+					<Faq question="How quickly will I receive my designs?" answer="Good"></Faq>
+					<Faq question="How does it work?" answer="Good"></Faq>
+					<Faq question="What if I only have a single design request?" answer="Good"></Faq>
+				</div>
+			</Container>
+		</section>
+		<section>
+			<Container>
+				<div class="max-w-770 text-center mx-auto">
+					<Eyebrow content="Get started in less than 5 minutes"></Eyebrow>
+					<h2 class="mb-4">Your success is just a click away.</h2>
+					<p class="mb-6">To get started, just click on the button below and select one of two billing options. You'll be guided through our hassle-free onboarding process, and then we'll get to work on bringing your designs to life.</p>
+					<div class="flex-row justify-center align-center mb-6 mx-auto">
+						<Button label="Get started"/>
+						<Button isWhite label="Learn more"/>
+					</div>
+				</div>
+			</Container>
+		</section>
+	</body>
+</html>
+
+<style lang="scss">
+	@import "../styles/variables.scss";
+
+
+
+	section {
+		position: relative;
+		padding-block: 7.5rem;
+	}
+
+	.image--section {
+		height: 630px;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0; bottom: 0; left: 0;
+			width: 100%;
+			height: 440px;
+			background-color: map-get($primary, "500");
+		}
+	}
+
+	.btn--wrapper {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.orange {
+		color: map-get($primary, "500");
+	}
+
+	.max-w-770 {
+		width: 100%;
+		max-width: 770px;
+	}
+
+	.max-w-870 {
+		width: 100%;
+		max-width: 870px;
+	}
+
+	.mx-auto {
+		margin-inline: auto;
+	}
+
+	.col-2 {
+		@media screen and (min-width: map-get($breakpoints, "med")) {
+            columns: 2 auto;
+			column-gap: 1.875rem;
+        }
+	}
+
+	.grid-cols-2 {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		grid-template-rows: repeat(2, minmax(0, min-content));
+		gap: 3.75rem;
+
+		@media screen and (min-width: map-get($breakpoints, "med")) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-rows: repeat(1, minmax(0, 1fr));
+			gap: 3.75rem;
+		}
+	}
+
+	.grid-cols-4 {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		grid-template-rows: repeat(4, minmax(0, min-content));
+		gap: 1.875rem;
+
+		@media screen and (min-width: map-get($breakpoints, "med")) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			grid-template-rows: repeat(1, minmax(0, 1fr));
+			gap: 1.875rem;
+		}
+	}
+
+	.grid-cols-6 {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		grid-template-rows: repeat(6, minmax(0, min-content));
+		gap: 1.875rem;
+
+		@media screen and (min-width: map-get($breakpoints, "med")) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-template-rows: repeat(2, minmax(0, 1fr));
+			gap: 1.875rem;
+		}
+	}
+
+	.is-gray {
+		background-color: map-get($gray, "50");
+	}
+
+</style>

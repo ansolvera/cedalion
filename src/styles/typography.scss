@@ -1,0 +1,48 @@
+h1, h2, h3, h4, h5, h6 {
+    color: map-get($gray, "900");
+}
+
+h1, h2 {
+    line-height: 1;
+    font-weight: 600;
+}
+h1 {
+    font-size: 3rem;
+    letter-spacing: -0.05em;
+}
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: -0.025em;
+}
+h3 {
+    font-size: 2rem;
+    line-height: 1.1;
+}
+h4 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: map-get($gray, "700");
+}
+
+small {
+    line-height: 1.2;
+    color: map-get($gray, "500");
+}
+
+
+
+h1 + p, h2 + p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: map-get($gray, "500");
+}
+
+.prose p {
+    margin-bottom: 1.33em;
+}

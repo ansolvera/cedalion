@@ -1,0 +1,59 @@
+---
+import {Icon} from "astro-icon";
+
+export interface Props {
+    question?: string;
+    answer?: string;
+}
+
+const {question, answer} = Astro.props;
+---
+
+<div class="faq" x-data="{open: false}">
+    <div class="question flex-row justify-between align-center" @click="open = !open">
+        <p>{question}</p>
+        <Icon name="octicon:chevron-down-16"></Icon>
+    </div>
+    <div class="answer" x-show="open">
+        <p>{answer}</p>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .faq {
+        position: relative;
+    }
+
+    .question {
+        padding: 1.5rem 1rem;
+        font-weight: 500;
+        border-bottom: 1px solid map-get($gray, "100");
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            p {
+                color: map-get($primary, "500");
+            }
+        }
+
+    }
+
+    .answer {
+        display: block;
+        position: relative;
+        bottom: 0; right: 0; left: 0;
+        padding: 2.5rem;
+        background-color: map-get($gray, "50");
+    }
+
+    [astro-icon="octicon:chevron-down-16"] {
+        width: auto;
+        height: 1rem;
+        color: map-get($primary, "500");
+    }
+
+</style>
+

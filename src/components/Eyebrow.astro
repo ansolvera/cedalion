@@ -1,0 +1,26 @@
+---
+export interface Props {
+    content?: string;
+}
+
+const { content } = Astro.props;
+---
+
+<div class="eyebrow">
+    {content}
+</div>
+
+<style lang="scss">
+    @import "../styles/variables.scss";
+
+    .eyebrow {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        padding-left: 0.5em;
+        font-size: 0.875rem;
+        line-height: 1;
+        color: map-get($gray, "500");
+        border-left: 2px solid map-get($primary, "500");
+    }
+
+</style>
