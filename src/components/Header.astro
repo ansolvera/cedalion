@@ -1,157 +1,170 @@
 ---
 import Container from "../components/Container.astro";
-import {Icon} from "astro-icon";
+import { Icon } from "astro-icon";
 import Button from "./Button.astro";
 ---
+
 <header x-data="{open: false}">
-    <Container>
-        <div class="flex-row justify-between align-center">
-            <div class="flex-row justify-start align-center">
-                <img src="/img/cedalion-logo.svg" alt="Cedalion logo" class="logo">
-                <p>Cedalion</p>
-            </div>
-            <ul class="nav-links">
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-            <button class="hamburger" @click="open=!open">
-                <Icon name="octicon:three-bars-16" x-show="!open"></Icon>
-                <Icon name="octicon:x-16" x-show="open"></Icon>
-            </button>
-        </div>
-    </Container>
-    <div class="overlay" x-show="open">
-        <ul class="mobile-nav-links">
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <Button label="Get started"></Button>
-            </li>
-        </ul>
-    </div>
+	<Container>
+		<div class="flex-row justify-between align-center">
+			<div class="flex-row justify-start align-center">
+				<img
+					src="/img/cedalion-logo.svg"
+					alt="Cedalion logo"
+					class="logo"
+				/>
+				<p>Cedalion</p>
+			</div>
+			<ul class="nav-links">
+				<li>
+					<a href="#about">About</a>
+				</li>
+				<li>
+					<a href="#portfolio">Portfolio</a>
+				</li>
+				<li>
+					<a href="#pricing">Pricing</a>
+				</li>
+				<li>
+					<a href="#contact">Contact</a>
+				</li>
+			</ul>
+			<button
+				class="hamburger"
+				x-on:click="open=!open">
+				<Icon
+					name="octicon:three-bars-16"
+					x-show="!open"
+				/>
+				<Icon
+					name="octicon:x-16"
+					x-show="open"
+				/>
+			</button>
+		</div>
+	</Container>
+	<div
+		class="overlay"
+		x-show="open">
+		<ul class="mobile-nav-links">
+			<li>
+				<a href="#about">About</a>
+			</li>
+			<li>
+				<a href="#portfolio">Portfolio</a>
+			</li>
+			<li>
+				<a href="#pricing">Pricing</a>
+			</li>
+			<li>
+				<a href="#contact">Contact</a>
+			</li>
+			<li>
+				<Button label="Get started" />
+			</li>
+		</ul>
+	</div>
 </header>
 
 <script>
-    const hamburger = document.querySelector('button.hamburger');
-    hamburger?.addEventListener('click', () => {
-        document.body.classList.toggle('no-scroll');
-    })
+	const hamburger = document.querySelector("button.hamburger");
+	hamburger?.addEventListener("click", () => {
+		document.body.classList.toggle("no-scroll");
+	});
 </script>
 
 <style lang="scss">
-    @import "../styles/variables.scss";
+	@import "../styles/variables.scss";
 
-    .overlay {
-        position: absolute;
-        z-index: 999;
-        top: 4rem; right: 0; bottom: 0; left: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 2.5rem;
-        width: 100vw;
-        height: calc(100vh - 4rem);
-        background-color: rgba(255,255,255,0.96);
-        backdrop-filter: 1rem;
-    }
+	.overlay {
+		position: absolute;
+		z-index: 999;
+		top: 4rem;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding: 2.5rem;
+		width: 100vw;
+		height: calc(100vh - 4rem);
+		background-color: rgba(255, 255, 255, 0.96);
+		backdrop-filter: 1rem;
+	}
 
-    .mobile-nav-links {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 1.5rem;
+	.mobile-nav-links {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 1.5rem;
 
-        li {
-            font-size: 1rem;
-            line-height: 1;
-            font-weight: 500;
-        }
+		li {
+			font-size: 1rem;
+			line-height: 1;
+			font-weight: 500;
+		}
+	}
 
-    }
+	button {
+		display: inline-block;
+		padding: 0.5rem;
+		border: 1px solid map-get($gray, "100");
+		border-radius: 0.25rem;
 
-    button {
-        display: inline-block;
-        padding: 0.5rem;
-        border: 1px solid map-get($gray, "100");
-        border-radius: 0.25rem;
+		@media screen and (min-width: map-get($breakpoints, "med")) {
+			display: none;
+		}
+	}
 
-        @media screen and (min-width: map-get($breakpoints, "med")) {
-            display: none;
-        }
+	[astro-icon] {
+		width: auto;
+		height: 1rem;
+	}
 
-    }
+	header {
+		display: grid;
+		place-items: center;
+		height: 4rem;
+	}
 
-    [astro-icon] {
-        width: auto;
-        height: 1rem;
-    }
+	.logo {
+		margin-right: 0.5rem;
+		width: auto;
+		height: 2.5rem;
+	}
 
-    header {
-        display: grid;
-        place-items: center;
-        height: 4rem;
-    }
+	p {
+		font-size: 1.25rem;
+		line-height: 1;
+		font-weight: 600;
+		color: map-get($gray, "700");
+		letter-spacing: -0.025em;
+	}
 
-    .logo {
-        margin-right: 0.5rem;
-        width: auto;
-        height: 2.5rem;
-    }
+	.nav-links {
+		display: none;
 
-    p {
-        font-size: 1.25rem;
-        line-height: 1;
-        font-weight: 600;
-        color: map-get($gray, "700");
-        letter-spacing: -0.025em;
-    }
+		@media screen and (min-width: map-get($breakpoints, "med")) {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+			gap: 1.5rem;
+		}
+	}
 
+	li {
+		font-size: 0.875rem;
+		line-height: 1;
+		font-weight: 500;
+		color: map-get($gray, "500");
+		transition: color 0.3s ease-in-out;
 
-    .nav-links {
-        display: none;
-
-        @media screen and (min-width: map-get($breakpoints, "med")){
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 1.5rem;
-        }
-    }
-
-    li {
-        font-size: 0.875rem;
-        line-height: 1;
-        font-weight: 500;
-        color: map-get($gray, "500");
-        transition: color 0.3s ease-in-out;
-
-        &:hover {
-            color: map-get($primary, "500");
-        }
-
-    }
-
+		&:hover {
+			color: map-get($primary, "500");
+		}
+	}
 </style>

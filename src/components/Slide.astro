@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title?: string;
+  src?: string;
+}
+
+const { title, src } = Astro.props;
+---
+
+<div id={title} class="slide">
+  <img src={src} alt={title} />
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .slide {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+  }
+</style>

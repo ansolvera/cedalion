@@ -1,0 +1,9 @@
+{
+	"useTabs": true,
+	"tabWidth": 1,
+	"bracketSpacing": true,
+	"bracketSameLine": true,
+	"proseWrap": "always",
+	"printWidth": 80,
+	"singleAttributePerLine": true
+}

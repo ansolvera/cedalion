@@ -1,0 +1,132 @@
+---
+import Container from "./Container.astro";
+import { Icon } from "astro-icon";
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+	<Container>
+		<div class="footer--top py-16">
+			<div class="grid-cols-4">
+				<div class="flex-col justify-start align-start">
+					<img
+						src="/img/cedalion-logo.svg"
+						alt="Cedalion logo"
+						class="footer--logo"
+					/>
+				</div>
+				<div class="flex-col justify-start align-start"></div>
+				<div class="flex-col justify-start align-start">
+					<h5 class="mb-4">Links</h5>
+					<ul class="footer--links">
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<li>
+							<a href="#portfolio">Portfolio</a>
+						</li>
+						<li>
+							<a href="#pricing">Pricing</a>
+						</li>
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
+					</ul>
+				</div>
+				<div class="flex-col justify-start align-start">
+					<h5 class="mb-4">Legal</h5>
+					<ul class="footer--links">
+						<li>
+							<a
+								href="https://www.craft.me/s/8SzNY6Q428nfrz"
+								target="_blank"
+								>Disclaimer</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://www.craft.me/s/P6PbEoJ2E3MoN6"
+								target="
+              "
+								>Terms and Conditions</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://www.craft.me/s/74oiOkj9gjwbvu"
+								target="_blank"
+								>Privacy Policy</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://www.craft.me/s/FxmXmU3POBAyum"
+								target="_blank"
+								>Cookies</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer--bottom py-4 flex-row justify-between align-center">
+			<p>
+				©{year} Alex Sanchez Creative, LLC d.b.a. Cedalion Digital. All rights reserved.
+			</p>
+			<div class="flex-row justify-end align-center">
+				<Icon name="simple-icons:facebook" />
+				<Icon name="simple-icons:twitter" />
+				<Icon name="simple-icons:linkedin" />
+				<Icon name="simple-icons:dribbble" />
+			</div>
+		</div>
+	</Container>
+</footer>
+
+<style lang="scss">
+	@import "../styles/variables.scss";
+
+	.footer--logo {
+		width: auto;
+		height: 3rem;
+	}
+
+	.footer--bottom p {
+		font-size: 0.875rem;
+		line-height: 1;
+	}
+
+	.footer--links {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 1rem;
+
+		li {
+			font-size: 0.875rem;
+			line-height: 1;
+			transition: color 0.3s ease-in-out;
+
+			&:hover {
+				color: map-get($primary, "500");
+			}
+		}
+	}
+
+	[astro-icon] {
+		width: auto;
+		height: 1.125rem;
+		color: map-get($gray, "300");
+		transition: color 0.3s ease-in-out;
+
+		&:hover {
+			color: map-get($gray, "900");
+		}
+
+		&:not(last-of-type) {
+			margin-right: 1rem;
+		}
+	}
+</style>

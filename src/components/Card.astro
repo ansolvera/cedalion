@@ -1,51 +1,52 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from "astro-icon";
 
 export interface Props {
-    heading?: string;
-    content?: string;
+  heading?: string;
+  content?: string;
 }
 
 const { heading, content } = Astro.props;
 ---
 
 <div class="card">
-    <h3 class="mb-4">{heading}</h3>
-    <p class="mb-4">{content}</p>
-    <div class="flex-row justify-start align-center">
-        <a href="/">Get started</a>
-        <Icon name="octicon:arrow-right-16"></Icon>
-    </div>
+  <slot name="icon" />
+  <h3 class="mb-4">{heading}</h3>
+  <p class="mb-4">{content}</p>
+  <div class="flex-row justify-start align-center">
+    <a href="#pricing">Get started</a>
+    <Icon name="octicon:arrow-right-16" />
+  </div>
 </div>
 
 <style lang="scss">
-    @import "../styles/variables.scss";
+  @import "../styles/variables.scss";
 
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 
-    .card h3 {
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
+  .card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 
-    .card p {
-        font-size: 0.875rem;
-    }
+  .card p,
+  .card a {
+    font-size: 0.875rem;
+  }
 
-    a {
-        font-weight: 600;
-        text-decoration: underline;
-    }
+  a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
 
-    [astro-icon] {
-        margin-left: 0.25rem;
-        width: auto;
-        height: 1rem;
-    }
-
+  [astro-icon] {
+    margin-left: 0.25rem;
+    width: auto;
+    height: 1rem;
+  }
 </style>
