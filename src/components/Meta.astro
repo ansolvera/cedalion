@@ -1,7 +1,7 @@
 ---
 export interface Props {
-    siteTitle?: string;
-    siteDescription?: string;
+	siteTitle?: string;
+	siteDescription?: string;
 }
 
 const canonicalURL = "/";
@@ -27,3 +27,17 @@ const { siteTitle, siteDescription } = Astro.props;
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:description" content={siteDescription} />
 <meta property="twitter:image" content="" />
+
+<!-- Google tag (gtag.js) -->
+<script
+	type="text/partytown"
+	src="https://www.googletagmanager.com/gtag/js?id=G-7CB94GJMQV"></script>
+<script type="text/partytown">
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
+
+	gtag("config", "G-7CB94GJMQV");
+</script>
