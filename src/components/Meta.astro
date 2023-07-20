@@ -1,4 +1,6 @@
 ---
+import socialImage from "/img/cedalion-social.webp";
+
 export interface Props {
 	siteTitle?: string;
 	siteDescription?: string;
@@ -20,13 +22,13 @@ const { siteTitle, siteDescription } = Astro.props;
 <meta property="og:title" content={siteTitle} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:description" content={siteDescription} />
-<meta property="og:image" content="" />
+<meta property="og:image" content={socialImage} />
 
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content={siteTitle} />
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:description" content={siteDescription} />
-<meta property="twitter:image" content="" />
+<meta property="twitter:image" content={socialImage} />
 
 <!-- Google tag (gtag.js) -->
 <script
