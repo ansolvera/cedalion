@@ -35,15 +35,8 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 						to a design subscription instead.
 					</p>
 					<div class="flex-row justify-start align-center mb-6">
-						<Button
-							href="#pricing"
-							label="Get started"
-						/>
-						<Button
-							href="#about"
-							isWhite
-							label="Learn more"
-						/>
+						<Button href="#pricing" label="Get started" />
+						<Button href="#about" isWhite label="Learn more" />
 					</div>
 					<div>
 						<small>Sign up in 5 minutes</small>
@@ -68,11 +61,7 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 			<Container>
 				<div
 					class="max-w-870 flex-row justify-around align-center gap-8 flex-wrap mx-auto">
-					<img
-						src="/img/ari.svg"
-						alt="Ayn Rand Institute logo"
-						class="logo ari"
-					/>
+					<img src="/img/ari.svg" alt="Ayn Rand Institute logo" class="logo ari" />
 					<img
 						src="/img/interfacely.svg"
 						alt="Interfacely logo"
@@ -83,22 +72,12 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 						alt="Prototypr logo"
 						class="logo prototypr"
 					/>
-					<img
-						src="/img/ruzuku.svg"
-						alt="Ruzuku logo"
-						class="logo ruzuku"
-					/>
-					<img
-						src="/img/ux-planet.svg"
-						alt="Ux Planet logo"
-						class="logo uxplanet"
-					/>
+					<img src="/img/ruzuku.svg" alt="Ruzuku logo" class="logo ruzuku" />
+					<img src="/img/ux-planet.svg" alt="Ux Planet logo" class="logo uxplanet" />
 				</div>
 			</Container>
 		</section>
-		<section
-			id="about"
-			class="pt-16 pb-32">
+		<section id="about" class="pt-16 pb-32">
 			<Container>
 				<div class="max-w-770 mb-16">
 					<h2 class="mb-4">
@@ -155,68 +134,49 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 				</div>
 			</Container>
 		</section>
-		<section
-			id="portfolio"
-			class="py-16">
+		<section id="portfolio" class="py-16">
 			<Container>
 				<div class="flex-row justify-between align-start mb-16">
 					<div class="max-w-770">
 						<Eyebrow content="Latest work" />
 						<h2 class="mb-4">Take a look at some recent design projects</h2>
-						<p>
+						<p class="mb-6">
 							They say a picture's worth a thousand words. So here's a few thousand
 							words to show you what we can do for your business.
 						</p>
+						<div class="flex-row justify-start align-center">
+							<a href="https://dribbble.com/alexsanchezdesign" target="_blank"
+								>View all projects</a
+							>
+							<Icon name="octicon:arrow-right-16" />
+						</div>
 					</div>
 					<div class="flex-row justify-end align-center gap-8">
-						<button
-							id="api-go-backward"
-							class="icon--wrapper"
-							aria-label="previous">
+						<button id="api-go-backward" class="icon--wrapper" aria-label="previous">
 							<Icon name="octicon:chevron-left-16" />
 						</button>
-						<button
-							id="api-go-forward"
-							class="icon--wrapper"
-							aria-label="next">
+						<button id="api-go-forward" class="icon--wrapper" aria-label="next">
 							<Icon name="octicon:chevron-right-16" />
 						</button>
 					</div>
 				</div>
 				<div class="glide">
-					<div
-						class="glide__track"
-						data-glide-el="track">
+					<div class="glide__track" data-glide-el="track">
 						<ul class="glide__slides">
 							<li class="glide__slide">
-								<Slide
-									title="You.Car"
-									src="/img/youcar-thumbnail.webp"
-								/>
+								<Slide title="You.Car" src="/img/youcar-thumbnail.webp" />
 							</li>
 							<li class="glide__slide">
-								<Slide
-									title="Grindr"
-									src="/img/grindr-thumbnail.webp"
-								/>
+								<Slide title="Grindr" src="/img/grindr-thumbnail.webp" />
 							</li>
 							<li class="glide__slide">
-								<Slide
-									title="Matthew Hussey"
-									src="/img/mh-thumbnail.webp"
-								/>
+								<Slide title="Matthew Hussey" src="/img/mh-thumbnail.webp" />
 							</li>
 							<li class="glide__slide">
-								<Slide
-									title="Roam"
-									src="/img/roam-thumbnail.webp"
-								/>
+								<Slide title="Roam" src="/img/roam-thumbnail.webp" />
 							</li>
 							<li class="glide__slide">
-								<Slide
-									title="Bon Matin"
-									src="/img/bonmatin-thumbnail.webp"
-								/>
+								<Slide title="Bon Matin" src="/img/bonmatin-thumbnail.webp" />
 							</li>
 						</ul>
 					</div>
@@ -237,63 +197,49 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 					<Card
 						heading="Unlimited design projects"
 						content="Submit and queue up as many design projects as you like. Unlimited really means unlimited.">
-						<div
-							class="mb-4"
-							slot="icon">
+						<div class="mb-4" slot="icon">
 							<Icon name="bi:infinity" />
 						</div>
 					</Card>
 					<Card
 						heading="Top-notch quality"
 						content="Professional-quality design at your fingertips. Without the six-figure salary expenses.">
-						<div
-							class="mb-4"
-							slot="icon">
+						<div class="mb-4" slot="icon">
 							<Icon name="bi:award" />
 						</div>
 					</Card>
 					<Card
 						heading="Quick turnarounds"
 						content="Most projects are completed within 48 to 72 hours, on average.">
-						<div
-							class="mb-4"
-							slot="icon">
+						<div class="mb-4" slot="icon">
 							<Icon name="bi:speedometer" />
 						</div>
 					</Card>
 					<Card
 						heading="No meetings"
 						content="Because the last thing you need right now is another recurring meeting on your calendar.">
-						<div
-							class="mb-4"
-							slot="icon">
+						<div class="mb-4" slot="icon">
 							<Icon name="bi:calendar-x" />
 						</div>
 					</Card>
 					<Card
 						heading="Low commitment"
 						content="Get started today with no contracts, retainer agreements, or minimum commitments.">
-						<div
-							class="mb-4"
-							slot="icon">
+						<div class="mb-4" slot="icon">
 							<Icon name="bi:door-open" />
 						</div>
 					</Card>
 					<Card
 						heading="Premium stock assets"
 						content="Need great stock photos or videos for your project? We source and design with them for you.">
-						<div
-							class="mb-4"
-							slot="icon">
+						<div class="mb-4" slot="icon">
 							<Icon name="bi:images" />
 						</div>
 					</Card>
 				</div>
 			</Container>
 		</section>
-		<section
-			id="pricing"
-			class="py-16">
+		<section id="pricing" class="py-16">
 			<Container>
 				<div class="max-w-770 mb-16">
 					<h2 class="mb-4">Two billing options. One flat, monthly fee</h2>
@@ -328,9 +274,7 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 				<Faq />
 			</Container>
 		</section>
-		<section
-			id="contact"
-			class="py-16">
+		<section id="contact" class="py-16">
 			<Container>
 				<div class="max-w-770 text-center mx-auto">
 					<Eyebrow content="Get started in less than 5 minutes" />
@@ -341,10 +285,7 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 						process, and then we'll get to work on bringing your designs to life.
 					</p>
 					<div class="flex-row justify-center align-center mb-6 mx-auto">
-						<Button
-							href="#pricing"
-							label="Get started"
-						/>
+						<Button href="#pricing" label="Get started" />
 					</div>
 				</div>
 			</Container>
@@ -381,6 +322,19 @@ import "@glidejs/glide/dist/css/glide.core.min.css";
 				width: auto;
 				height: 1.75rem;
 				color: map-get($primary, "500");
+			}
+
+			#portfolio a {
+				font-size: 0.875rem;
+				font-weight: 600;
+				text-decoration: underline;
+			}
+
+			[astro-icon="octicon:arrow-right-16"] {
+				margin-left: 0.25rem;
+				width: auto;
+				height: 1rem;
+				color: black;
 			}
 
 			section {
