@@ -1,163 +1,168 @@
 ---
-import { Icon } from 'astro-icon';
-import Button from './Button.astro';
+import { Icon } from "astro-icon";
+import Button from "./Button.astro";
 
 export interface Props {
-    href?: string;
-    billing?: string;
-    price?: string;
-    description?: string;
-    isBlack?: boolean;
+	href?: string;
+	billing?: string;
+	price?: string;
+	description?: string;
+	isBlack?: boolean;
 }
 
 const { href, billing, price, description, isBlack } = Astro.props;
 ---
 
-<div class:list={['pricing--card shadow-2xl', {black: isBlack}]}>
-    <div class="card--top">
-        <p class="billing mb-4">{billing}</p>
-        <div class="flex-row justify-start align-center mb-4">
-            <h3>{price}</h3>
-            <div class="flex-col justify-end align-start">
-                <small>per month</small>
-                <small>billed {billing}</small>
-            </div>
-        </div>
-        <p class="mb-4">{description}</p>
-        <div class="flex-row justify-start align-center">
-            <a href="https://calendly.com/alexsanchezdesigns/15min" target="_blank">Rather talk first? Book a call here</a>
-            <Icon name="octicon:arrow-right-16"></Icon>
-        </div>
-    </div>
-    <div class="card--bottom">
-        <ul class="mb-10">
-            <li>
-                <Icon name="octicon:check-16"></Icon>
-                <p><strong>Unlimited</strong> design requests</p>
-            </li>
-            <li>
-                <Icon name="octicon:check-16"></Icon>
-                <p><strong>Unlimited</strong> revisions</p>
-            </li>
-            <li>
-                <Icon name="octicon:check-16"></Icon>
-                <p><strong>Unlimited</strong> active team members</p>
-            </li>
-            <li>
-                <Icon name="octicon:check-16"></Icon>
-                <p><strong>Pause or cancel</strong> at any time</p>
-            </li>
-            <li>
-                <Icon name="octicon:check-16"></Icon>
-                <p><strong>Premium stock photos</strong> via iStockPhoto</p>
-            </li>
-        </ul>
-        <a href={href} target="_blank" class="pricing--btn">Get started now<Icon name="octicon:arrow-right-16"></Icon></a>
-    </div>
+<div class:list={["pricing--card shadow-2xl", { black: isBlack }]}>
+	<div class="card--top">
+		<p class="billing mb-4">{billing}</p>
+		<div class="flex-row justify-start align-center mb-4">
+			<h3>{price}</h3>
+			<div class="flex-col justify-end align-start">
+				<small>per month</small>
+				<small>billed {billing}</small>
+			</div>
+		</div>
+		<p class="mb-4">{description}</p>
+		<div class="flex-row justify-start align-center">
+			<a href="https://calendly.com/cedalion/cedalion-intro-call" target="_blank"
+				>Rather talk first? Book a call here</a
+			>
+			<Icon name="octicon:arrow-right-16" />
+		</div>
+	</div>
+	<div class="card--bottom">
+		<ul class="mb-10">
+			<li>
+				<Icon name="octicon:check-16" />
+				<p><strong>Unlimited</strong> design requests</p>
+			</li>
+			<li>
+				<Icon name="octicon:check-16" />
+				<p><strong>Unlimited</strong> revisions</p>
+			</li>
+			<li>
+				<Icon name="octicon:check-16" />
+				<p><strong>Unlimited</strong> active team members</p>
+			</li>
+			<li>
+				<Icon name="octicon:check-16" />
+				<p><strong>Pause or cancel</strong> at any time</p>
+			</li>
+			<li>
+				<Icon name="octicon:check-16" />
+				<p><strong>Premium stock photos</strong> via iStockPhoto</p>
+			</li>
+		</ul>
+		<a href={href} target="_blank" class="pricing--btn"
+			>Get started now<Icon name="octicon:arrow-right-16" /></a
+		>
+	</div>
 </div>
 
 <style lang="scss">
-    @import "../styles/variables.scss";
+	@import "../styles/variables.scss";
 
-    .pricing--card {
-        background-color: white;
-        border: 1px solid map-get($gray, "50");
-        border-radius: 0.75rem;
-    }
+	.pricing--card {
+		background-color: white;
+		border: 1px solid map-get($gray, "50");
+		border-radius: 0.75rem;
+	}
 
-    .black {
-        background-color: map-get($gray, "900");
+	.black {
+		background-color: map-get($gray, "900");
 
-        h3, strong, a, [astro-icon] {
-            color: white;
-        }
+		h3,
+		strong,
+		a,
+		[astro-icon] {
+			color: white;
+		}
 
-        p, small {
-            color: map-get($gray, "100");
-        }
+		p,
+		small {
+			color: map-get($gray, "100");
+		}
+	}
 
-    }
+	.card--top,
+	.card--bottom {
+		padding-block: 2.5rem;
+		padding-inline: 1.5rem;
+	}
 
-    .card--top, .card--bottom {
-        padding-block: 2.5rem;
-        padding-inline: 1.5rem;
-    }
+	.card--top {
+		border-bottom: 1px solid map-get($gray, "100");
+	}
 
-    .card--top {
-        border-bottom: 1px solid map-get($gray, "100");
-    }
+	.billing {
+		font-size: 1.25rem;
+		font-weight: 500;
+		text-transform: capitalize;
+	}
 
-    .billing {
-        font-size: 1.25rem;
-        font-weight: 500;
-        text-transform: capitalize;
-    }
+	h3 {
+		margin-right: 0.5rem;
+		font-size: 3rem;
+		font-weight: 800;
+	}
 
-    h3 {
-        margin-right: 0.5rem;
-        font-size: 3rem;
-        font-weight: 800;
-    }
+	a {
+		font-size: 0.75rem;
+		line-height: 1;
+		font-weight: 700;
+		color: map-get($gray, "700");
+		text-decoration: underline;
+	}
 
-    a {
-        font-size: 0.75rem;
-        line-height: 1;
-        font-weight: 700;
-        color: map-get($gray, "700");
-        text-decoration: underline;
-    }
+	li {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
 
-    li {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+		&:not(last-of-type) {
+			margin-bottom: 0.5rem;
+		}
+	}
 
-        &:not(last-of-type) {
-            margin-bottom: 0.5rem;
-        }
+	.pricing--btn {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding: 1rem 1.5rem;
+		background-color: map-get($primary, "500");
+		border-radius: 0.25rem;
+		font-size: 1rem;
+		line-height: 1;
+		font-weight: 600;
+		color: white;
+		text-decoration: none;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
 
-    }
+		&:hover {
+			background-color: map-get($primary, "400");
+		}
 
-    .pricing--btn {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 1rem 1.5rem;
-        background-color: map-get($primary, "500");
-        border-radius: 0.25rem;
-        font-size: 1rem;
-        line-height: 1;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
+		&:active {
+			background-color: map-get($primary, "600");
+		}
+	}
 
-        &:hover {
-            background-color: map-get($primary, "400");
-        }
+	[astro-icon] {
+		width: auto;
+	}
 
-        &:active {
-            background-color: map-get($primary, "600");
-        }
+	[astro-icon="octicon:arrow-right-16"] {
+		margin-left: 0.5rem;
+		height: 0.875rem;
+	}
 
-    }
-
-    [astro-icon] {
-        width: auto;
-    }
-
-    [astro-icon="octicon:arrow-right-16"] {
-        margin-left: 0.5rem;
-        height: 0.875rem;
-    }
-
-    [astro-icon="octicon:check-16"] {
-        margin-right: 0.5rem;
-        height: 1rem;
-        color: map-get($primary, "500");
-    }
-
+	[astro-icon="octicon:check-16"] {
+		margin-right: 0.5rem;
+		height: 1rem;
+		color: map-get($primary, "500");
+	}
 </style>
